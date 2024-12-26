@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="./styles/card.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <form id="form" id="quizForm">
+        <h1>Quiz Questions</h1>
+        <input id="question" type="text" placeholder="Question Statement" required>
+        <input id="optionA" type="text" placeholder="Qption A" required>
+        <input id="optionB" type="text" placeholder="Qption B" required>
+        <input id="optionC" type="text" placeholder="Qption C" required>
+        <input id="optionD" type="text" placeholder="Qption D" required>
+        <input id="correctOption" type="text" placeholder="Correct Option" required>
+        <input id="submit" type="submit" value="Add Question">
+    </form>
+    <div id="questionContainer"></div>
+    <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/quiz.js" type="module"></script>
+</body>
+</html>

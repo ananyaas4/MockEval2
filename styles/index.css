@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar-container{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    background-color: rgb(68, 68, 203);
+    padding: 25px;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#navbar-links a{
+    margin: 20px;
+}

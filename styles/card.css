@@ -1,0 +1,21 @@
+.card {
+    border: 2px solid;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card.blue{
+    border-color: blue;
+}
+
+.card.violet{
+    border-color: violet;
+}
+
+h2{
+    color:rgb(68, 68, 203);
+    margin-top: 30px;
+    text-align: center;
+    font-size: 2rem;
+}
