@@ -3,19 +3,19 @@ import {baseUrl} from "./baseurl.js";
 function fetchQuestions(){
     fetch(`${baseUrl}/questions`)
     .then(res => res.json())
-    .then((data) => renderQuestions(data));
+    .then(data => renderQuestions(data));
 }
 
 function renderQuestions(questions){
     const cont = document.getElementById("questionContainer");
     cont.innerHTML = '';
-    questions.forEach(questions =>{
-        const card = document.getElementById("div");
+    questions.forEach(question =>{
+        const card = document.createElement("div");
         card.className = `card ${question.reviewStatus? 'violet' : 'blue'}`;
         card.innerHTML = `
         <p>${question.statement}</p>
-        <button onClick="reviewQuestion(${question.id})>Review Question</button>
-        <button onClick="deleteQuestion(${question.id})>Delete Question</button>`;
+        <button onclick="reviewQuestion(${question.id})>Review Question</button>
+        <button onclick="deleteQuestion(${question.id})>Delete Question</button>`;
         cont.appendChild(card);
     });
 }
@@ -23,24 +23,24 @@ function renderQuestions(questions){
 function reviewQuestion(id){
     if(confirm("Are you sure to review the question?"))
     {
-        fetch(`${baseUrl}/${id}`,{
+        fetch(`${baseUrl}/questions/${id}`,{
             method: 'PATCH',
             headers:{
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({reviewStatus: true})
         })
-        .then(fetchQuestions)
+        .then(fetchQuestions);
     }
 }
 
 function deleteQuestion(id){
     if(confirm("Are you sure to delete?"))
     {
-        fetch(`${baseUrl}/${id}`,{
+        fetch(`${baseUrl}/questions/${id}`,{
             method: 'DELETE',
         })
-        .then(fetchQuestions)
+        .then(fetchQuestions);
     }
 }
 
